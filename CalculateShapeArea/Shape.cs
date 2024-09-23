@@ -8,5 +8,6 @@ namespace CalculateShapeArea
 {
     abstract class Shape
     {
+        public abstract void CalculateArea();
     }
 }
