@@ -17,24 +17,18 @@ namespace CalculateShapeArea
             Console.WriteLine($"The area of the rectangle is: {area}");
         }
 
-        private double GetValidInput(string message)
+        private double GetValidInput(string prompt)
         {
-            double input;
-            bool isValid;
-
-            do
+            double value;
+            while (true)
             {
-                Console.WriteLine(message);
-                string inputString = Console.ReadLine();
-                isValid = double.TryParse(inputString, out input);
-
-                if (!isValid)
+                Console.WriteLine(prompt);
+                if (double.TryParse(Console.ReadLine(), out value) && value > 0)
                 {
-                    Console.WriteLine("Invalid input. Please enter a valid number.");
+                    return value;
                 }
-            } while (!isValid);
-
-            return input;
+                Console.WriteLine("Invalid input. Please enter a positive numeric value.");
+            }
         }
     }
 }
