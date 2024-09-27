@@ -14,14 +14,14 @@ namespace CalculateShapeArea
             {
                 Console.WriteLine("Do you want to calculate the area of a rectangle or a circle?");
                 Console.WriteLine("Type 'rectangle' or 'circle' to calculate, or 'exit' to quit:");
-                string choice = Console.ReadLine().ToLower();
+                string choice = Console.ReadLine().ToLower().Trim();
 
                 if (choice == "exit")
                 {
                     break;
                 }
 
-                Shape shape = null;
+                Shape shape;
 
                 switch (choice)
                 {
